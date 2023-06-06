@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+<div id="preloader"></div>
+
+
+
+<header>
+  <h1>Welcome to Predictions Hub</h1>
+</header>
+
+<nav>
+
+  <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Contact us</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Logout</a></li>
+  </ul>
+
+</nav> 
+
+  <div class="card-wrapper">
+
+    <div class="card">
+
+      <h1 class="center">Welcome to Predictions Hub Dashboard</h1>
+    
+      <p class="center">You are currently logged in as .</p>
+      <p>
+        <strong>Name:</strong> {{ session['user']['name'] }}<br>
+        <strong>Email:</strong> {{ session['user']['email'] }}<br>
+        <strong>ID:</strong> {{ session['user']['_id'] }}<br>
+      </p>
+
+      <div class="center">
+        <a href="/user/signout" class="btn btn--secondary">Log Out</a>
+      </div>
+    
+    </div>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Qg89eVQBV6k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Qg89eVQBV6k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+
+
+    <div class="card">
+
+      <h2 class="center">What would you like to do?.</h2>
+
+      <a href="{{ url_for('home') }}">Got to Prediction</a>
+    </div>
+  
+  </div>
+
+  <script src="/static/js/preload.js"></script>
+
+
+  
+<footer>
+            
+  <nav>
+
+      <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About us</a></li>
+          <li><a href="#">Contact us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Logout</a></li>
+      </ul>
+
+  </nav>
+
+</footer>
+
+
+{% endblock %}

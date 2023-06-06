@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+dill
+catboost
+xgboost
+flask
+pymongo[srv]
+passlib
+bcrypt
+python-dotenv
+# -e .

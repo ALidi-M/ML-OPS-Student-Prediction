@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+
+{% block content %}
+<title>Predictions Hub</title>
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+<div id="preloader"></div>
+
+
+
+<header>
+    <h1>Welcome to Predictions Hub</h1>
+</header>
+
+<nav>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About us</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Logout</a></li>
+    </ul>
+
+</nav> 
+
+  <div class="card-wrapper">
+
+    <div class="card">
+
+      <h1 class="center">Prediction Data</h1>
+
+      <form name="signup_form"  action="{{ url_for('predict_data')}}" method="post">
+
+        <label for="name">Gender</label>
+        <select class="form-control" name="gender" id="field" required>
+            <option class="placeholder" selected disabled value=""></option>
+            <option value="male">
+                Male
+            </option>
+            <option value="female">
+                Female
+            </option>
+        </select>
+
+
+
+        <label for="email">Race Ethinicity</label>
+
+        <select class="form-control" name="ethnicity" id="field" required>
+            <option class="placeholder" selected disabled value=""></option>
+            <option value="group A">
+                Group A
+            </option>
+            <option value="group B">
+                Group B
+            </option>
+            <option value="group C">
+                Group C
+            </option>
+            <option value="group D">
+                Group D
+            </option>
+            <option value="group E">
+                Group E
+            </option>
+        </select>
+
+
+
+        <label for="password">Parental Level of Education</label>
+        <select class="form-control" name="parental_level_of_education" id="field" required>
+        <option class="placeholder" selected disabled value=""></option>
+        <option value="associate's degree">
+            Associate Degree
+        </option>
+        <option value="bachelor's degree">
+            Bachelor's Degree
+        </option>
+        <option value="high school">
+            High School
+        </option>
+        <option value="master's degree">
+            Master's Degree
+        </option>
+        <option value="some college">
+            College
+        </option>
+        <option value="some high school">
+            Some High School
+        </option>
+    </select>
+
+
+    <label for="lunch">Lunch Type</label>
+    <select class="form-control" name="lunch" id="field"  required>
+        <option class="placeholder" selected disabled value=""> </option>
+        <option value="free/reduced">
+            free/reduced
+        </option>
+        <option value="standard">
+            standard
+        </option>
+    </select>
+
+    <label for="test_preparation_course">test_preparation_course</label>
+    <select class="form-control" name="test_preparation_course" id="field" required>
+                    <option class="placeholder" selected disabled value=""> </option>
+                    <option value="none">
+                        None
+                    </option>
+                    <option value="completed">
+                        Completed
+                    </option>
+                </select>
+
+
+    <label for="reading score">Reading Score</label>
+    <input class="form-control" id="field" type="number" name="reading_score" min='0' max='100' />
+
+
+    <label for="writing score">Writing Score</label>
+    <input class="form-control" id="field"  type="number" name="writing_score" min='0' max='100' />
+
+
+    <input type="submit" class="btn"  value="Predict Score" class="btn" >
+      
+      </form>
+      
+    </div>
+
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Qg89eVQBV6k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Qg89eVQBV6k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+
+
+
+    <div class="card">
+
+      <h1 class="center">Display Area</h1>
+
+      <h2 class="center">{{res}}</h2>
+
+
+      <form name="display">
+
+       
+      
+      </form>
+      
+    </div>
+  
+  </div>
+
+<footer>
+            
+    <nav>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Contact us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+
+    </nav>
+
+</footer>
+
+
+    {% endblock %}
+
+
+<script src="/static/js/preload.js"></script>
+
+
+
+
+   <body>
+</html>
